@@ -1,0 +1,103 @@
+/*^
+  ===========================================================================
+  Atlas
+  ===========================================================================
+  Copyright (C) 2017 Gianluca Costa
+  ===========================================================================
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  ===========================================================================
+*/
+
+buildscript {
+    repositories {
+        maven {
+            url 'https://dl.bintray.com/giancosta86/Hephaestus'
+        }
+
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:5.0'
+        classpath 'info.gianlucacosta.aurora:aurora:9.2'
+
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    }
+}
+
+
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'com.jfrog.bintray'
+
+apply plugin: 'info.gianlucacosta.moonlicense'
+apply plugin: 'info.gianlucacosta.aurora'
+
+
+group 'info.gianlucacosta.atlas'
+archivesBaseName = 'atlas'
+version '1.0'
+
+description = 'Interactive cartography for Java'
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile 'org.jxmapviewer:jxmapviewer2:2.2'
+
+    compile 'info.gianlucacosta.zephyros:zephyros-core:1.0'
+}
+
+
+
+moonLicense {
+    license = apache2
+
+    productInfo {
+        productName = 'Atlas'
+        inceptionYear = 2017
+        copyrightHolder = 'Gianluca Costa'
+    }
+}
+
+
+aurora {
+    gitHubUser = 'giancosta86'
+
+    author {
+        name = 'Gianluca Costa'
+        email = 'gianluca@gianlucacosta.info'
+        url = 'http://gianlucacosta.info/'
+    }
+
+    bintray {
+        repo = 'Hephaestus'
+        licenses = ['Apache-2.0']
+
+        labels = [
+                'Java',
+                'geographic',
+                'maps',
+                'interactive',
+                'cartography',
+                'OpenStreetMap'
+        ]
+    }
+}
