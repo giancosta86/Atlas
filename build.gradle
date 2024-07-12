@@ -28,7 +28,7 @@ description = 'Interactive cartography for Java'
 sourceCompatibility = 1.8
 
 dependencies {
-    compile 'org.jxmapviewer:jxmapviewer2:2.2'
+    compile 'org.jxmapviewer:jxmapviewer2:2.8'
 
     compile 'info.gianlucacosta.zephyros:zephyros-core:2.0.0-SNAPSHOT'
 }
