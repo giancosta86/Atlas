@@ -21,7 +21,7 @@ apply plugin: 'info.gianlucacosta.aurora'
 
 group 'info.gianlucacosta.atlas'
 archivesBaseName = 'atlas'
-version '2.0-SNAPSHOT'
+version '2.0.0-SNAPSHOT'
 
 description = 'Interactive cartography for Java'
 
